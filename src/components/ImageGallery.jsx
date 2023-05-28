@@ -1,16 +1,8 @@
-import {
-  Flex,
-  Box,
-  Spacer,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Image,
-} from "@chakra-ui/react";
+import { Box, SimpleGrid } from "@chakra-ui/react";
 import { storage } from "/src/firebase";
 import { useState, useEffect } from "react";
 import { ref, getDownloadURL, listAll } from "firebase/storage";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function ImageGallery({ folderName }) {
   const [imageURLs, setImageURLs] = useState([]);
@@ -31,18 +23,16 @@ export default function ImageGallery({ folderName }) {
     };
     fetchImages();
   }, []);
+
   return (
-    <div>
-      {imageURLs.map((url, index) => (
-        <Card>
-          <Image
-            src={url}
-            alt={`Image ${index}`}
-            key={index}
-            borderRadius="lg"
-          />
-        </Card>
-      ))}
-    </div>
+    <Box p={4}>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={10}>
+        {imageURLs.map((url, index) => (
+          <Box key={index} borderRadius="lg">
+            <LazyLoadImage alt={`Image ${index}`} src={url} effect="blur" />
+          </Box>
+        ))}
+      </SimpleGrid>
+    </Box>
   );
 }
