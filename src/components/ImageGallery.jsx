@@ -1,4 +1,5 @@
-import { Box, SimpleGrid } from "@chakra-ui/react";
+// import { Box, SimpleGrid } from "@chakra-ui/react";
+import { Box } from "@mui/material";
 import { storage } from "/src/firebase";
 import { useState, useEffect } from "react";
 import { ref, getDownloadURL, listAll } from "firebase/storage";
@@ -25,14 +26,12 @@ export default function ImageGallery({ folderName }) {
   }, []);
 
   return (
-    <Box p={4}>
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={10}>
-        {imageURLs.map((url, index) => (
-          <Box key={index} borderRadius="lg">
-            <LazyLoadImage alt={`Image ${index}`} src={url} effect="blur" />
-          </Box>
-        ))}
-      </SimpleGrid>
+    <Box>
+      {imageURLs.map((url, index) => (
+        <Box>
+          <LazyLoadImage alt={`Image ${index}`} src={url} effect="blur" />
+        </Box>
+      ))}
     </Box>
   );
 }

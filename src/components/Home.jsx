@@ -1,5 +1,6 @@
-import Header from "/src/components/Header";
+// import Header from "/src/components/Header.jsx";
 import ImageGallery from "../components/ImageGallery";
+import Header from "./Header";
 
 export default function Home() {
   return (

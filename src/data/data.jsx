@@ -1,7 +1,7 @@
-import BetiRoom from "/src/components/BetiRoom.jsx";
-import Home from "/src/components/Home.jsx";
-import MasterRoom from "/src/components/MasterRoom.jsx";
-import DormRoom from "/src/components/DormRoom.jsx";
+import Home from "../components/Home";
+import BetiRoom from "../components/rooms/BetiRoom";
+import DormRoom from "../components/rooms/DormRoom";
+import MasterRoom from "../components/rooms/MasterRoom";
 
 export const rooms = [
   {
