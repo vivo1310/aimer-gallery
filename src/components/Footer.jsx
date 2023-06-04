@@ -23,6 +23,7 @@ export default function Footer() {
             flexGrow: 1,
             justifyContent: "center",
             alignItems: "center",
+            flexDirection: { xs: "column", sm: "row" },
             // my: 1,
           }}
         >
