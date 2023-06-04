@@ -1,5 +1,5 @@
 // import { Box, SimpleGrid } from "@chakra-ui/react";
-import { Box } from "@mui/material";
+import { Box, ImageList, ImageListItem } from "@mui/material";
 import { storage } from "/src/firebase";
 import { useState, useEffect } from "react";
 import { ref, getDownloadURL, listAll } from "firebase/storage";
@@ -24,14 +24,36 @@ export default function ImageGallery({ folderName }) {
     };
     fetchImages();
   }, []);
+  {
+    /* <LazyLoadImage
+            src={`${url}?w=161&fit=crop&auto=format`}
+            srcSet={`${url}?w=161&fit=crop&auto=format&dpr=2 2x`}
+            alt={`Image ${index}`}
+            effect="blur"
+          /> */
+  }
 
   return (
-    <Box>
+    // <Box sx={{ width: "80%" }}>
+    <ImageList variant="masonry" cols={3} gap={8}>
       {imageURLs.map((url, index) => (
-        <Box>
-          <LazyLoadImage alt={`Image ${index}`} src={url} effect="blur" />
-        </Box>
+        <ImageListItem key={index}>
+          <img
+            src={`${url}?w=161&fit=crop&auto=format`}
+            srcSet={`${url}?w=161&fit=crop&auto=format&dpr=2 2x`}
+            alt={`Image ${index}`}
+            loading="lazy"
+          />
+        </ImageListItem>
       ))}
-    </Box>
+    </ImageList>
+    // </Box>
+    // <Box>
+    //   {imageURLs.map((url, index) => (
+    //     <Box>
+    //       <LazyLoadImage alt={`Image ${index}`} src={url} effect="blur" />
+    //     </Box>
+    //   ))}
+    // </Box>
   );
 }
