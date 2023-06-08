@@ -1,7 +1,6 @@
 import { Box, Button, Container, Paper, Typography } from "@mui/material";
 // import logo from "/src/assets/aimer-logo.svg";
 // import InstagramIcon from "@mui/icons-material/Instagram";
-import { socialMedia } from "/src/data/data";
 import SocialMediaButtonGroup from "./SocialMediaButtonGroup";
 import ContactDetails from "./ContactDetails";
 
@@ -10,7 +9,6 @@ export default function Footer() {
     <Paper
       sx={{
         position: "sticky",
-        bottom: 0,
         width: "100%",
         textAlign: "center",
         pb: 1,

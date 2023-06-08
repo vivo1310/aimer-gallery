@@ -1,4 +1,4 @@
-import { Container, Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import ImageGallery from "./ImageGallery";
 
 export default function Room({ folderName, roomName }) {
