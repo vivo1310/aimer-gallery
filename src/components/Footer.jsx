@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <Paper
       sx={{
-        position: "fixed",
+        position: "sticky",
         bottom: 0,
         width: "100%",
         textAlign: "center",

@@ -24,36 +24,21 @@ export default function ImageGallery({ folderName }) {
     };
     fetchImages();
   }, []);
-  {
-    /* <LazyLoadImage
-            src={`${url}?w=161&fit=crop&auto=format`}
-            srcSet={`${url}?w=161&fit=crop&auto=format&dpr=2 2x`}
-            alt={`Image ${index}`}
-            effect="blur"
-          /> */
-  }
 
   return (
-    // <Box sx={{ width: "80%" }}>
     <ImageList variant="masonry" cols={3} gap={8}>
       {imageURLs.map((url, index) => (
         <ImageListItem key={index}>
           <img
-            src={`${url}?w=161&fit=crop&auto=format`}
-            srcSet={`${url}?w=161&fit=crop&auto=format&dpr=2 2x`}
+            // src={`${url}?w=161&fit=crop&auto=format`}
+            // srcSet={`${url}?w=161&fit=crop&auto=format&dpr=2 2x`}
+            src={`${url}?fit=crop&auto=format`}
+            srcSet={`${url}?fit=crop&auto=format&dpr=2 2x`}
             alt={`Image ${index}`}
             loading="lazy"
           />
         </ImageListItem>
       ))}
     </ImageList>
-    // </Box>
-    // <Box>
-    //   {imageURLs.map((url, index) => (
-    //     <Box>
-    //       <LazyLoadImage alt={`Image ${index}`} src={url} effect="blur" />
-    //     </Box>
-    //   ))}
-    // </Box>
   );
 }
