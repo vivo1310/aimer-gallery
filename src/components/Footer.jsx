@@ -20,14 +20,14 @@ export default function Footer() {
       variant="outlined"
     >
       <Container
-        maxWidth="lg"
+        maxWidth="sm"
         sx={{ pt: 2, pb: 1, display: { xs: "block", sm: "none" } }}
       >
         <SocialMediaButtonGroup />
         <ContactDetails alignItems="center" />
       </Container>
       <Container
-        maxWidth="lg"
+        maxWidth="md"
         sx={{ pt: 2, pb: 1, display: { xs: "none", sm: "flex" } }}
       >
         <ContactDetails alignItems="flex-start" />

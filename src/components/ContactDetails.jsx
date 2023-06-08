@@ -9,7 +9,7 @@ export default function ContactDetails({ alignItems }) {
         alignItems: { alignItems },
         display: "flex",
         flexDirection: "column",
-        gap: 1,
+        mt: 1,
       }}
     >
       <Typography variant="body2">
