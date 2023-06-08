@@ -2,69 +2,40 @@ import { Box, Button, Container, Paper, Typography } from "@mui/material";
 // import logo from "/src/assets/aimer-logo.svg";
 // import InstagramIcon from "@mui/icons-material/Instagram";
 import { socialMedia } from "/src/data/data";
+import SocialMediaButtonGroup from "./SocialMediaButtonGroup";
+import ContactDetails from "./ContactDetails";
 
 export default function Footer() {
   return (
     <Paper
       sx={{
-        // marginTop: "calc(10% + 60px)",
         position: "fixed",
         bottom: 0,
         width: "100%",
+        textAlign: "center",
+        pb: 1,
       }}
       component="footer"
       square
       variant="outlined"
     >
-      <Container maxWidth="lg" sx={{ pt: 2, pb: 2 }}>
-        <Box
-          sx={{
-            display: "flex",
-            flexGrow: 1,
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: { xs: "column", sm: "row" },
-            // my: 1,
-          }}
-        >
-          {socialMedia.map((item) => (
-            <Button
-              key={item.name}
-              href={item.path}
-              sx={{
-                display: "flex",
-                flexGrow: 1,
-                justifyContent: "center",
-                alignItems: "center",
-                color: "grey.800",
-                gap: 1,
-              }}
-            >
-              {item.icon}
-              <Typography>{item.name}</Typography>
-            </Button>
-          ))}
-        </Box>
-
-        <Box
-          sx={{
-            flexGrow: 1,
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            flexDirection: "column",
-            gap: 1,
-            mt: 2,
-          }}
-        >
-          <Typography variant="body2">
-            Địa chỉ: 13 Trần Khánh Dư (nối dài) - P.8 - Đà Lạt
-          </Typography>
-          <Typography variant="caption" color="grey" mt="16px">
-            ©2023 Aimer.dalat
-          </Typography>
-        </Box>
+      <Container
+        maxWidth="lg"
+        sx={{ pt: 2, pb: 1, display: { xs: "block", sm: "none" } }}
+      >
+        <SocialMediaButtonGroup />
+        <ContactDetails alignItems="center" />
       </Container>
+      <Container
+        maxWidth="lg"
+        sx={{ pt: 2, pb: 1, display: { xs: "none", sm: "flex" } }}
+      >
+        <ContactDetails alignItems="flex-start" />
+        <SocialMediaButtonGroup />
+      </Container>
+      <Typography variant="caption" color="grey">
+        ©2023 Aimer.dalat
+      </Typography>
     </Paper>
   );
 }

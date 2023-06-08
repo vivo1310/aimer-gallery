@@ -45,7 +45,7 @@ export const roomRoutes = rooms.map((item) => {
 
 export const socialMedia = [
   {
-    name: "@aimerdalat",
+    name: "@aimer.dalat",
     icon: (
       <SvgIcon>
         <svg
@@ -57,7 +57,7 @@ export const socialMedia = [
         </svg>
       </SvgIcon>
     ),
-    path: "https://www.instagram.com/aimerdalat/",
+    path: "https://www.instagram.com/aimer.dalat/",
   },
   {
     name: "Aimer.dalat",
