@@ -26,14 +26,12 @@ export default function ImageGallery({ folderName }) {
   }, []);
 
   return (
-    <ImageList variant="masonry" cols={3} gap={8}>
+    <ImageList variant="masonry" cols={2} gap={8}>
       {imageURLs.map((url, index) => (
         <ImageListItem key={index}>
           <img
-            // src={`${url}?w=161&fit=crop&auto=format`}
-            // srcSet={`${url}?w=161&fit=crop&auto=format&dpr=2 2x`}
-            src={`${url}?fit=crop&auto=format`}
-            srcSet={`${url}?fit=crop&auto=format&dpr=2 2x`}
+            src={`${url}`}
+            srcSet={`${url}`}
             alt={`Image ${index}`}
             loading="lazy"
           />
