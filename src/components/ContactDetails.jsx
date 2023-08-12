@@ -24,7 +24,7 @@ export default function ContactDetails({ alignItems }) {
           color="text.primary"
           href="tel:+84933842420"
         >
-          0933 842 420
+          +84 933 842 420
         </Typography>
       </Typography>
     </Box>
