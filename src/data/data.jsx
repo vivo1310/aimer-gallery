@@ -6,6 +6,10 @@ export const APP_NAME = "Aimer.dalat";
 
 export const rooms = [
   {
+    name: "Welcome to Aimer.dalat 🤎",
+    path: "/", // homepage
+  },
+  {
     name: "Single Beti",
     path: "single-beti",
   },
@@ -22,6 +26,10 @@ export const rooms = [
     path: "double-large",
   },
   {
+    name: "Dorm",
+    path: "dorm",
+  },
+  {
     name: "Mini House - Single",
     path: "single-mini",
   },
@@ -30,13 +38,19 @@ export const rooms = [
     path: "double-mini",
   },
   {
-    name: "Dorm",
-    path: "dorm",
+    name: "Mini House - Common Area",
+    path: "mini-common-area",
   },
 ];
 
 // extract only path and element for createBrowserRouter object
 export const roomRoutes = rooms.map((item) => {
+  if (item.path === "/") {
+    return {
+      path: item.path,
+      element: <Room folderName="others" roomName={item.name} />,
+    };
+  }
   return {
     path: item.path,
     element: <Room folderName={item.path} roomName={item.name} />,

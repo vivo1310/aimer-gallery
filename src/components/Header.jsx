@@ -11,7 +11,7 @@ import {
   MenuItem,
   Divider,
 } from "@mui/material";
-import { APP_NAME, rooms } from "/src/data/data";
+import { APP_NAME, rooms as roomsInfo } from "/src/data/data";
 import MenuIcon from "@mui/icons-material/Menu";
 
 export default function Header() {
@@ -24,6 +24,8 @@ export default function Header() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  const rooms = roomsInfo.filter((room) => room.path !== "/");
 
   return (
     <AppBar position="static">
