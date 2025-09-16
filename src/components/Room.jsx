@@ -5,6 +5,7 @@ export default function Room({ folderName, roomName }) {
   return (
     <>
       <Typography variant="h4">{roomName}</Typography>
+      <ImageGallery folderName={folderName} />
       <Typography variant="h6">
         Aimer.dalat has stopped operating. Thanks for all of your love and
         support thus far!
